@@ -32,7 +32,7 @@ const uploadmessage = multer({ storage: storage }).fields([
 
   const uploadaboutmessage = multer({ storage: storage }).fields([
     {
-      name: "image2"
+      name: "aboutimage"
     }
     ]);
 
@@ -221,7 +221,7 @@ const uploadAboutRouter = (req, res) => {
   const about = new About({
     firstabtmessage: req.body.firstabtmessage,
     secondabtmessage: req.body.secondabtmessage,
-    image2: req.files['image2'][0].filename
+    aboutimage: req.files['aboutimage'][0].filename
   });
 
   about.save((err) => {
@@ -305,7 +305,7 @@ const singleAboutRouter = (req, res, next) => {
     res.render("about", {
       firstabtmessage: post.firstabtmessage,
       secondabtmessage: post.secondabtmessage,
-      image2: post.image2,
+      aboutimage: post.aboutimage,
     });
   });
 };

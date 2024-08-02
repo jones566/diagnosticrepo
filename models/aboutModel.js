@@ -3,9 +3,9 @@ import mongoose from "mongoose";
 const postSchema = new mongoose.Schema({
   firstabtmessage: String,
   secondabtmessage: String,
-  image2: {
+  aboutimage: {
     type: String,
-    default: "",
+    default: ""
   }
 });
 

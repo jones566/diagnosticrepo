@@ -447,14 +447,14 @@
 
     <!-- About us section started -->
     <% if (postAbout.length > 0) { %>
-    <% const about = postAbout[1]; %>
+    <% const about = postAbout[0]; %>
     <div class="main-about" id="about">
 
         <div class="about-heading">About Us</div>
 
         <div class="inner-main-about">
             <div class="about-inner-content-left">
-                <img src="<%= about.image2 %>" alt="">
+                <img src="<%= about.aboutimage %>" alt="">
             </div>
 
             <div class="about-inner-content">
