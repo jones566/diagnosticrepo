@@ -1,4 +1,5 @@
 import Post from "../models/postModel.js";
+import About from "../models/aboutModel.js";
 import Services from "../models/serviceModel.js";
 import Comments from "../models/commentModel.js";
 import Blog from "../models/blogModel.js";
@@ -62,13 +63,15 @@ const uploadmessage = multer({ storage: storage }).fields([
           Blog.find({}).exec(),
           Comments.find({}).exec(),
           Team.find({}).exec(),
-        ]).then(([posts, services, blogs, comments, teams]) => {
+          About.find({}).exec(),
+        ]).then(([posts, services, blogs, comments, teams, about]) => {
           res.render("index", {
             postContent: posts,
             postService: services,
             postBlog: blogs,
             postComment: comments,
             postTeam: teams,
+            postAbout: abouts,
           });
         }).catch(err => {
           res.status(500).send("Error fetching data");
@@ -215,13 +218,13 @@ const uploadWelcomeRouter = (req, res) => {
 };
 
 const uploadAboutRouter = (req, res) => {
-  const post = new Post({
+  const about = new About({
     firstabtmessage: req.body.firstabtmessage,
     secondabtmessage: req.body.secondabtmessage,
     image2: req.files['image2'][0].filename
   });
 
-  post.save((err) => {
+  about.save((err) => {
     if (!err) {
       res.render("admin/addabtmessage");
     }
@@ -297,7 +300,7 @@ const singleMessageRouter = (req, res, next) => {
 const singleAboutRouter = (req, res, next) => {
   const requestedPostId = req.params.postId;
 
-  Post.findOne({firstabtmessage:  requestedPostId}, (err, post) => {
+  About.findOne({firstabtmessage:  requestedPostId}, (err, post) => {
     if (err) return next(err);
     res.render("about", {
       firstabtmessage: post.firstabtmessage,
