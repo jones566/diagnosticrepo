@@ -64,7 +64,7 @@ const uploadmessage = multer({ storage: storage }).fields([
           Comments.find({}).exec(),
           Team.find({}).exec(),
           About.find({}).exec(),
-        ]).then(([posts, services, blogs, comments, teams, about]) => {
+        ]).then(([posts, services, blogs, comments, teams, abouts]) => {
           res.render("index", {
             postContent: posts,
             postService: services,
