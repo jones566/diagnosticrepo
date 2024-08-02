@@ -1,0 +1,78 @@
+
+    <%- include("sidenav"); -%>
+    <%- include("topheader"); -%>
+       <!-- End Navbar -->
+<div class="content">
+  <div class="container-fluid">
+    <form
+      action=""
+      method="POST"
+      type="form"
+      name="form"
+      enctype="multipart/form-data">
+      <div class="row">
+        <div class="col-md-7">
+          <div class="card">
+            <div class="card-header card-header-primary">
+              <h5 class="title">Make Changes to the services messages here</h5>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label>Type of test</label>
+                        <input
+                          type="text"
+                          id="content"
+                          name="servicestitle"
+                          class="form-control" />
+                      </div>
+                    </div>
+
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label>Details of the test</label>
+                        <input
+                          type="text"
+                          id="stock"
+                          name="servicesmessage"
+                          class="form-control" />
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="">
+                    <label for="">Add Image</label>
+                    <input
+                      type="file"
+                      name="servicesimage"
+                      class="btn btn-fill btn-success"
+                      id="picture">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="card">
+            <div class="card-footer">
+              <button
+                type="submit"
+                id="btn_save"
+                name="btn_save" 
+                class="btn btn-fill btn-primary">
+                Update
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<%- include("footer"); -%>

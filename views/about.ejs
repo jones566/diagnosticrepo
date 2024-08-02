@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<title> K4 diagnostic and health consult</title>
+		<!-- Google font -->
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+		<!-- Custom stlylesheet -->
+	  <link type="text/css" rel="stylesheet" href="../css/style.css"/>
+    <!--<script src="./js/about.js"></script>-->
+    <script src="https://kit.fontawesome.com/c1df782baf.js"></script>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- Font Awesome Icon -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
+    
+    <style>    
+    .zoom {
+		padding: 50px;
+		transition: transform .2s;
+		width: 500px;
+		height: 500px;
+		margin: 0 auto;
+	}
+     .zoom:hover {
+		transform: scale(1.5);
+	 }  
+   .listBlog{
+    display: inline-block;
+    margin-right: 100px;
+   }
+   a:hover{
+    text-decoration: none;
+   }
+   a:link{
+    text-decoration: none;
+   }
+              
+   #search{
+    cursor: pointer;
+   }
+   a:hover{
+            text-decoration: none;
+        }
+        a:link{
+            text-decoration: none;
+        }
+        #whatsapp:visited{
+            color: #FFF;
+        }
+        #search{
+           cursor: pointer;
+        }
+
+        @keyframes fadeIn {
+            from { 
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+            .fade-in-element{
+                opacity: 0;
+                animation: fadeIn ease 10s;
+                animation-fill-mode: forwards;  
+            }
+            body{
+                opacity: 0;
+                animation: fadeIn ease 3s;
+                animation-fill-mode: forwards;
+            }
+
+            #loader {
+            border: 12px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 12px solid #444444;
+            width: 70px;
+            height: 70px;
+            animation: spin 1s linear infinite;
+        }
+ 
+        .center {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+ 
+        @keyframes spin {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        .servicesHover{
+           cursor: pointer;
+        }
+
+        .float{
+        position:fixed;
+        width:60px;
+        height:60px;
+        bottom:40px;
+        right:40px;
+        background-color:#25d366;
+        color:#FFF;
+        border-radius:50px;
+        text-align:center;
+        font-size:30px;
+        box-shadow: 2px 2px 3px #999;
+        z-index:100;
+        }
+
+        .my-float{
+            margin-top:16px;
+        }
+        @media (max-width: 830px) {
+        .headerClass nav{
+            display: none;
+          }
+         
+        } 
+   </style>
+
+    </head>
+	<body>
+    <br><br><br><br><br>
+		<!-- SECTION -->
+		<div class="section main main-raised">
+			<!-- container -->
+			<div class="container main-about">
+				<!-- row -->
+				<div class="row">
+					
+				
+					<div class="col-md-5 col-md-push-2">
+						<div id="product-main-img">
+							<div class="product-preview" id="img2">
+								<img src="../<%=image2%>"" alt="">
+							</div>
+						</div>
+					</div>
+                                
+					<div class="col-md-2  col-md-pull-5">
+						
+					</div>
+				    
+                    <div class="col-md-5">
+						<div class="product-details">
+							<form action="" method="post">
+							<h2 class="product-name"></h2>
+							<div>
+								<div class="about-inner-content">
+                  <div class="about-right-content">
+                      <h2><%=firstabtmessage%></h2>
+                      <p class="aboutsec-content">
+                        <%=secondabtmessage%>
+                      </p>    
+                  </div>
+              </div>
+							</div>
+							
+						  <br>
+							<div class="add-to-cart" style="padding-right: 5px;">
+								<div class="btn-group" style="margin-left: 125px; margin-top: 15px;">
+                                    <a class="add-to-cart-btn" style="background-color: #2ec8a6;" href="javascript:window.history.back();">Go Back</a>
+								</div>                
+							</div>
+						   </div>
+						</div>
+					</form>
+					</div>
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /SECTION -->
+
+    <br>
+    <!-- ################# Footer Starts Here#######################--->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-12">
+                    <h2>About Us</h2>
+                    <p>
+                        We specialize in providing accurate and timely diagnostice services to ensure you get the best care possible.
+                    </p>
+                    <p>Our team of experts is dedicated to delivering comprehensive and reliable results. Trust us for all you diagnostic needs... </p>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <h2>Useful Links</h2>
+                    <ul class="list-unstyled link-list">
+                        <li><a ui-sref="about" href="#/about">About us</a><i class="fa fa-angle-right"></i></li>
+                        <li><a ui-sref="portfolio" href="#/portfolio">Portfolio</a><i class="fa fa-angle-right"></i></li>
+                        <li><a ui-sref="products" href="#/products">Latest jobs</a><i class="fa fa-angle-right"></i></li>
+                        <li><a ui-sref="gallery" href="#/gallery">Gallery</a><i class="fa fa-angle-right"></i></li>
+                        <li><a ui-sref="contact" href="#/contact">Contact us</a><i class="fa fa-angle-right"></i></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-sm-12 map-img">
+                    <h2>Contact Us</h2>
+                    <address class="md-margin-bottom-40">
+                        k4 Health <br>
+                        Consult (Tamale TTH road) <br>
+                        Mr. Nana Boakye <br>
+                        Phone: +233 244485974 <br>
+                        Email: <a href="k4labs@gmail.com" class="">k4labs@gmail.com</a><br>
+                    </address>
+
+                </div>
+            </div>
+        </div>
+        
+
+    </footer>
+    <div class="copy">
+            <div class="container">
+                <a href="https://www.smarteyeapps.com/">2024 &copy; All Rights Reserved | Designed and Developed by WebMasterDesigns</a>
+                
+                <span>
+                <a><i class="fab fa-github"></i></a>
+                <a><i class="fab fa-google-plus-g"></i></a>
+                <a><i class="fab fa-pinterest-p"></i></a>
+                <a><i class="fab fa-twitter"></i></a>
+                <a><i class="fab fa-facebook-f"></i></a>
+        </span>
+            </div>
+
+        </div>
+    
+    
+    <!-- footer ended -->
+</body>
+</html>	

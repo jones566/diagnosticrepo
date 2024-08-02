@@ -1,0 +1,196 @@
+<%- include("sidenav"); -%> <%- include("topheader"); -%>
+
+<!-- End Navbar -->
+<div class="content">
+  <div class="container-fluid">
+    <form
+      action=""
+      method="POST"
+      type="form"
+      name="form"
+      enctype="multipart/form-data">
+      <div class="row">
+        <div class="col-md-7">
+          <div class="card">
+            <div class="card-header card-header-primary">
+              <h5 class="title">Our Team</h5>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label>Health Center Tag</label>
+                        <input
+                          type="text"
+                          id="content"
+                          name="tag"
+                          class="form-control" />
+                      </div>
+                    </div>
+
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label>Position</label>
+                        <input
+                          type="text"
+                          id="stock"
+                          name="position"
+                          class="form-control" />
+                      </div>
+                    </div>
+
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label>Education</label>
+                        <input
+                          type="text"
+                          id="stock"
+                          name="education"
+                          class="form-control" />
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="">
+                    <label for="">Add Image</label>
+                    <input
+                      type="file"
+                      name="image"
+                      class="btn btn-fill btn-success"
+                      id="picture" >
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Description</label>
+                    <textarea
+                      rows="4"
+                      cols="80"
+                      id="details"
+                      name="content"
+                      class="form-control"></textarea>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Name</label>
+                    <input
+                      type="text"
+                      id="details"
+                      name="workerName"
+                      class="form-control" />
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Link1</label>
+                    <input
+                      type="text"
+                      id="old_price"
+                      name="firstLink"
+                      class="form-control" />
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Link2</label>
+                    <input
+                      type="text"
+                      id="old_price"
+                      name="secondLink"
+                      class="form-control" />
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Link3</label>
+                    <input
+                      type="text"
+                      id="old_price"
+                      name="thirdLink"
+                      class="form-control" />
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Link4</label>
+                    <input
+                      type="text"
+                      id="old_price"
+                      name="fourthLink"
+                      class="form-control" />
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Date</label>
+                    <input
+                      type="text"
+                      id="price"
+                      name="date"
+                      class="form-control" />
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Skills</label>
+                    <input
+                      type="text"
+                      id="price"
+                      name="skills"
+                      class="form-control" />
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Certificates</label>
+                    <input
+                      type="text"
+                      id="price"
+                      name="certificates"
+                      class="form-control" />
+                  </div>
+                </div>
+                
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Phone</label>
+                    <input
+                      type="text"
+                      id="price"
+                      name="phone"
+                      class="form-control" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="card">
+            <div class="card-footer">
+              <button
+                type="submit"
+                id="btn_save"
+                name="btn_save"
+                 
+                class="btn btn-fill btn-primary">
+                Update
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<%- include("footer"); -%>

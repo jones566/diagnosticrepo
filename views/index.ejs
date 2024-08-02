@@ -1,4 +1,961 @@
-<%- include("header"); -%>
-<%- include("body"); -%>
-<%- include("newslettter"); -%>
-<%- include("footer"); -%>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K4 diagnostic and health consult</title>
+
+    <script src="https://kit.fontawesome.com/c1df782baf.js"></script>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-thin-rounded/css/uicons-thin-rounded.css'>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- Font Awesome Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="./assets/images/fav.jpg">
+    <!--<link rel="stylesheet" href="./assets/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="./assets/css/fontawsom-all.min.css">
+    <link rel="stylesheet" href="./assets/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <style>
+        a:hover {
+            text-decoration: none;
+        }
+
+        a:link {
+            text-decoration: none;
+        }
+
+        button:checked {
+            text-decoration: none;
+            border: none;
+        }
+
+        #whatsapp:visited {
+            color: #FFF;
+        }
+
+        #search {
+            cursor: pointer;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .fade-in-element {
+            opacity: 0;
+            animation: fadeIn ease 10s;
+            animation-fill-mode: forwards;
+        }
+
+        body {
+            opacity: 0;
+            animation: fadeIn ease 3s;
+            animation-fill-mode: forwards;
+        }
+
+        #loader {
+            border: 12px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 12px solid #444444;
+            width: 70px;
+            height: 70px;
+            animation: spin 1s linear infinite;
+        }
+
+        .center {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        @keyframes spin {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .servicesHover {
+            cursor: pointer;
+        }
+
+        .float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+        }
+
+        .my-float {
+            margin-top: 16px;
+        }
+
+        .stars i {
+            color: #e6e6e6;
+            font-size: 35px;
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+
+        .yellow-option {
+            color: orange;
+        }
+
+        .star {
+            font-size: 2rem;
+            /* Adjust size as needed */
+            color: grey;
+        }
+
+        .star.selected {
+            color: orange;
+        }
+
+        .star-rating {
+            direction: rtl;
+            display: inline-block;
+            font-size: 2em;
+            user-select: none;
+        }
+
+        .star-rating input[type="radio"] {
+            display: none;
+        }
+
+        .star-rating label {
+            color: #bbb;
+            cursor: pointer;
+        }
+
+        .star-rating label:hover,
+        .star-rating input[type="radio"]:checked~label,
+        .star-rating input[type="radio"]:checked~label~label {
+            color: #f2b600;
+        }
+
+        .star-rating label:active {
+            color: #f2b600;
+        }
+
+        /*Responsiveness*/
+
+        @media (max-width: 830px) {
+            .headerClass nav {
+                display: none;
+            }
+
+        }
+
+        @media (min-width: 300px) and (max-width: 1280px) {
+
+            html,
+            body {
+                max-width: 100%;
+
+            }
+
+
+        }
+
+        @media (min-width: 820px) and (max-width: 1023px) {
+
+            .main-home,
+            .main {
+                margin-top: 40px;
+            }
+
+            .main-inner-doctor {
+                margin-left: 200px;
+
+            }
+
+            .inner-services {
+                margin-left: 200px;
+            }
+
+            .main-inner-review {
+                margin-left: 140px;
+            }
+
+            .service-heading {
+                margin-left: 100px;
+            }
+
+            .doctors-heading {
+                margin-left: 100px;
+            }
+
+            #cmtbtn {
+                margin-left: 140px;
+            }
+        }
+
+        @media (min-width: 1024px) and (max-width: 1025px) {
+
+            .main-home,
+            .main {
+                margin-top: 60px;
+            }
+
+            .doc-poster {
+                margin-left: 60px;
+            }
+
+            .main-services {
+                margin-left: 60px;
+            }
+        }
+
+
+        @media (min-width: 768px) and (max-width: 770px) {
+            #cmtbtn {
+                margin-left: 140px;
+            }
+
+            .main-inner-review {
+                margin-left: 140px;
+            }
+
+            .head {
+                height: 70px;
+
+            }
+
+            .navbar ul {
+                padding-top: 260px;
+
+
+            }
+
+
+        }
+
+        @media (min-width: 540px) and (max-width: 542px) {
+            #cmtbtn {
+                margin-left: 60px;
+            }
+
+            .main-inner-review {
+                margin-left: 40px;
+            }
+
+            .doc-poster {
+                margin-left: 60px;
+            }
+
+            .inner-services {
+                margin-left: 60px;
+            }
+        }
+
+        @media (min-width: 300px) and (max-width: 700px) {
+
+            .carousel-inner img {
+                object-fit: cover;
+                max-width: 250px;
+            }
+        }
+
+        @media (min-width: 300px) and (max-width: 540px) {
+
+            #myNavbar {
+                height: 390px;
+                overflow-x: hidden;
+            }
+
+            #myNavbar a {
+                border: none;
+                max-width: 200px;
+                margin-right: 200px;
+                font-size: 12px;
+            }
+
+            .aboutbtn {
+                max-width: 100%;
+            }
+
+        }
+
+        @media (min-width: 1024px) and (max-width: 2000px) {
+            .head {
+                height: 70px;
+            }
+        }
+
+
+        #message {
+            margin-top: 10px;
+            color: green;
+            display: none;
+        }
+
+        .review-text p {
+            white-space: pre-wrap;
+            /* Preserve whitespace and newlines */
+        }
+
+        input {
+            text-transform: none;
+        }
+
+        textarea {
+            text-transform: none;
+
+        }
+    </style>
+    <script>
+        document.onreadystatechange = function () {
+            if (document.readyState !== "complete") {
+                document.querySelector(
+                    "body").style.visibility = "hidden";
+                document.querySelector(
+                    "#loader").style.visibility = "visible";
+            } else {
+                document.querySelector(
+                    "#loader").style.display = "none";
+                document.querySelector(
+                    "body").style.visibility = "visible";
+            }
+        };
+    </script>
+
+</head>
+
+<body>
+
+    <div id="loader" class="center" style="position: fixed;">
+    </div>
+    <header style="display:flex; position: fixed;" class="head">
+        <div class="logo" style="width: 60px; height: 60px;"><img src="images/img/logo.png" alt=""></div>
+
+        <nav class="navbar collapse navbar-collapse" id="myNavbar" style="margin-top: 40px;">
+            <ul class="nav navbar-nav">
+                <a href="#">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Service</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#blog">Blog</a>
+                <a href="#contact_us">Contact</a>
+            </ul>
+        </nav>
+
+        <div class="right-icons">
+            <div id="menu-bars" class="fas fa-bars nav-toggle" data-toggle="collapse" data-target="#myNavbar"></div>
+            <a href="book">
+                <div class="btn">Make Appointment</div>
+            </a>
+        </div>
+    </header>
+    <!-- header section ended -->
+
+
+
+    <!-- Home section started -->
+    <% if (postContent.length > 0) { %>
+    <% const welcome = postContent[0]; %>
+    <div class="main-home">
+        <div class="home">
+            <div class="home-left-content">
+                <span><%= welcome.firstmessage %></span>
+                <h2><%= welcome.secondmessage %></h2>
+                <p class="lorem"><%= welcome.thirdmessage%></p>
+                <div class="home-btn">
+                    <a href="welcome/<%= welcome.firstmessage %>">Read More</a>
+                    <a class="homebtnsec" href="book">Appointment</a>
+                </div>
+            </div>
+
+            <div class="home-right-content">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="20000">
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                        <div class="item active fade-in-element">
+                            <img src="<%= welcome.image1 %>" alt="Los Angeles" style="width:100%; height: 500px;">
+                        </div>
+
+                        <div class="item fade-in-element">
+                            <img src="images/img/image1.png" alt="Chicago" style="width:100%; height: 500px;">
+                        </div>
+                    </div>
+                    <!-- Left and right controls -->
+                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <% } %>
+
+
+    <div class="technology">
+        <div class="main-technology">
+
+            <div class="inner-technology cross">
+                <span></span>
+                <i class="fi fi-tr-hands-heart"></i>
+                <h2>Quality & Safety</h2>
+                <p>Our Diagnostic center utilizes state of the art technology and employs a team of true experts.</p>
+            </div>
+
+            <div class="inner-technology cross">
+                <span></span>
+                <i class="fi fi-rr-doctor"></i>
+                <h2>Health & Equitability</h2>
+                <p>We ensure that health services is equitable to all individuals</p>
+            </div>
+
+            <div class="inner-technology cross">
+                <span></span>
+                <i class="fi fi-tr-user-md"></i>
+                <h2>Diagnostics & Consultancy</h2>
+                <p>Our Delmont diagnostic center uses current evidence based diagnostic procedures.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- home section ends -->
+
+    <!-- About us section started -->
+    <% if (postContent.length > 0) { %>
+    <% const about = postContent[1]; %>
+    <div class="main-about" id="about">
+
+        <div class="about-heading">About Us</div>
+
+        <div class="inner-main-about">
+            <div class="about-inner-content-left">
+                <img src="<%= about.image2 %>" alt="">
+            </div>
+
+            <div class="about-inner-content">
+                <div class="about-right-content">
+                    <h2><%= about.firstabtmessage %></h2>
+                    <p class="aboutsec-content">
+                        <%= about.secondabtmessage %>
+                    </p>
+                    <a href="about/<%= about.firstabtmessage %>"><button class="aboutbtn">Read More</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <% } %>
+    <!-- About us section ends -->
+
+    <!-- our doctors -->
+
+    <div class="main-doctors">
+        <div class="doctors-heading">
+            <h2>Our Team</h2>
+        </div>
+
+        <div class="main-inner-doctor">
+            <% postTeam.forEach((post, index) => { %>
+
+            <div class="doc-poster servicesHover">
+                <div class="doc-icons">
+                    <i class="fa-solid fa-share"></i>
+                    <i class="fa-solid fa-eye"></i>
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+                <img src="<%= post.image %>" alt="">
+
+                <div class="doc-details">
+                    <a href="workers/<%= post.worker %>">
+                        <h2><%= post.worker %></h2>
+                    </a>
+
+                    <a href="<%= post.links3 %>"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="<%= post.links4 %>"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <% }) %>
+        </div>
+
+    </div>
+
+
+    <!-- our doctors ended -->
+
+    <!-- our services -->
+
+    <div class="our-service" id="services">
+        <div class="service-heading">
+            <h2>Our Services</h2>
+        </div>
+
+        <div class="main-services">
+            <% postService.forEach((services, index) => { %>
+
+            <div class="inner-services servicesHover">
+                <a href="services/<%= services.servicestitle %>"><img src="<%=services.servicesimage%>" alt=""
+                        style="width: 200px; height: 200px;"></a>
+                <h3><%=services.servicestitle%></h3>
+            </div>
+
+            <% }) %>
+        </div>
+
+    </div>
+
+    <!-- our services ended -->
+
+    <!--  ************************* Bog Starts Here ************************** -->
+
+
+    <section id="blog" class="our-blog container-fluid">
+        <div class="container">
+            <div class="service-heading">
+                <h2>Our Blog</h2>
+            </div>
+
+            <div class="col-sm-12 blog-cont">
+
+                <div class="row no-margin">
+                    <% postBlog.forEach((blogs, index) => { %>
+
+                    <div class="col-sm-4 blog-smk">
+
+                        <div class="blog-single">
+
+                            <img src="<%=blogs.image%>" alt="" style="height: 200px;">
+
+                            <div class="blog-single-det">
+                                <span><%=blogs.date%></span>
+                                <h6 style="text-transform: none;"><%=blogs.title%></h6>
+                                <p style="text-transform: none;"><%=blogs.content.substring(0, 10)%></p>
+                                <a href="blog/<%= blogs.title %>">
+                                    <button class="aboutbtn btn-success btn-sm">More Detail</button>
+                                </a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <% }) %>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!--  ************************* Gallery Starts Here ************************** -->
+    <div id="gallery" class="gallery">
+        <div class="container">
+            <div class="service-heading">
+                <h2>Our Gallery</h2>
+            </div>
+            <div class="row">
+                <div>
+
+                    <div class="gallery-filter d-none d-sm-block">
+                        <button type="button" class="aboutbtn filter-button btn-sm" data-filter="all">All</button>
+                        <button type="button" class="aboutbtn filter-button btn-sm"
+                            data-filter="hdpe">Consultation</button>
+                        <button type="button" class="aboutbtn filter-button btn-sm" data-filter="sprinkle">ECG</button>
+                        <button type="button" class="aboutbtn filter-button btn-sm" data-filter="spray">Scan</button>
+                        <button type="button" class="aboutbtn filter-button btn-sm"
+                            data-filter="irrigation">Microscopy</button>
+                    </div>
+                    <br />
+
+
+
+                    <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
+                        <img src="./images/img/image1.png" class="img-responsive">
+                    </div>
+
+                    <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
+                        <img src="./images/about4.png" class="img-responsive">
+                    </div>
+
+                    <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter sprinkle">
+                        <img src="./images/img/image21.jpg" class="img-responsive">
+                    </div>
+
+                    <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter spray">
+                        <img src="./images/img/image27.jpg" class="img-responsive">
+                    </div>
+
+                    <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter irrigation">
+                        <img src="./images/img/image20.png" class="img-responsive">
+                    </div>
+
+                    <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter irrigation">
+                        <img src="./images/img/image23.jpg" class="img-responsive">
+                    </div>
+
+
+
+                </div>
+            </div>
+
+
+
+            <!-- ######## Gallery End ####### -->
+
+            <!-- customer review -->
+
+            <div class="main-review">
+                <section>
+                    <div class="review-heading">
+                        <h1>Our Customers Review</h1>
+                    </div>
+
+                    <div class="main-inner-review">
+
+
+                        <div class="review-inner-content">
+
+                            <% postComment.forEach((comments, index) => { %>
+
+                            <div class="review-box">
+                                <img src="<%=comments.commentimage%>" alt="">
+
+                                <h2 style="text-transform: none;"><%=comments.commenttitle%></h2>
+                                <div class="review-stars">
+                                    <% for (let i = 1; i <= 5; i++) { %>
+                                    <label class="star <%= comments.rating >= i ? 'selected' : '' %>">&#9733;</label>
+                                    <% } %>
+                                </div>
+
+                                <div class="review-text">
+                                    <p id="comment-content" style="text-transform: none;"><%=comments.commentcontent%>
+                                    </p>
+                                </div>
+
+                            </div>
+
+                            <% }) %>
+
+                        </div>
+
+
+                    </div>
+                    <!-- Trigger the modal with a button -->
+                    <div class="justify-content-center">
+                        <button type="button" id="cmtbtn" class="aboutbtn" data-toggle="modal"
+                            data-target="#myModal">Comment</button>
+                    </div>
+                </section>
+            </div>
+
+
+
+            <!-- Modal -->
+            <div id="myModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Add A Comment</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form action="/comment" method="POST" type="form" name="form" enctype="multipart/form-data">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Name</label>
+                                        <input type="text" id="content" name="commenttitle" class="form-control"
+                                            required />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Content</label>
+                                        <textarea type="text" id="stock" name="commentcontent" class="form-control"
+                                            rows="5" cols="5" required>
+                  </textarea>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Rate</label>
+                                        <div class="star-rating">
+                                            <input type="radio" id="5-stars" name="rating" value="5" required />
+                                            <label for="5-stars" class="star">&#9733;</label>
+                                            <input type="radio" id="4-stars" name="rating" value="4" required />
+                                            <label for="4-stars" class="star">&#9733;</label>
+                                            <input type="radio" id="3-stars" name="rating" value="3" required />
+                                            <label for="3-stars" class="star">&#9733;</label>
+                                            <input type="radio" id="2-stars" name="rating" value="2" required />
+                                            <label for="2-stars" class="star">&#9733;</label>
+                                            <input type="radio" id="1-stars" name="rating" value="1" required />
+                                            <label for="1-stars" class="star">&#9733;</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="">
+                                        <label for="">Add Your Image</label>
+                                        <input type="file" name="commentimage" class="aboutbtn" id="picture" required>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" id="btn_save" name="btn_save" class="aboutbtn">Rate</button>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        </section>
+    </div>
+
+    <!-- customer review -->
+
+    <!--  ************************* Contact Us Starts Here ************************** -->
+
+    <section id="contact_us" class="contact-us-single">
+        <div class="row no-margin">
+            <div class="col-sm-6 no-padding">
+                <iframe style="width:100%"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.751317423608!2d-0.8393583852435685!3d9.400349693301074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfddfbe322f7d79f%3A0x23e3cf6e4f79de6!2sTamale%2C%20Ghana!5e0!3m2!1sen!2sgh!4v1690572769675"
+                    height="480" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+            <div class="col-sm-6 cop-ck">
+                <h2>Contact Form</h2>
+                <form action="/contact" method="POST" type="form" name="form" id="myForm">
+                    <div class="row cf-ro">
+                        <div class="col-sm-3"><label>Enter Name :</label></div>
+                        <div class="col-sm-8"><input type="text" placeholder="Enter Name" name="name"
+                                class="form-control input-sm" required></div>
+                    </div>
+                    <div class="row cf-ro">
+                        <div class="col-sm-3"><label>Email Address :</label></div>
+                        <div class="col-sm-8"><input type="text" name="email" placeholder="Enter Email Address"
+                                class="form-control input-sm" required></div>
+                    </div>
+                    <div class="row cf-ro">
+                        <div class="col-sm-3"><label>Mobile Number:</label></div>
+                        <div class="col-sm-8"><input type="text" name="mobile" placeholder="Enter Mobile Number"
+                                class="form-control input-sm" required></div>
+                    </div>
+                    <div class="row cf-ro">
+                        <div class="col-sm-3"><label>Enter Message:</label></div>
+                        <div class="col-sm-8">
+                            <textarea rows="5" name="message" placeholder="Enter Your Message"
+                                class="form-control input-sm" required></textarea>
+                        </div>
+                    </div>
+                    <div class="row cf-ro">
+                        <div class="col-sm-3"><label></label></div>
+                        <div class="col-sm-8">
+                            <button class="aboutbtn btn-success btn-sm">Send Message</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <a id="whatsapp"
+        href="https://api.whatsapp.com/send?phone=51955081075&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202."
+        class="float" target="_blank">
+        <i class="fa fa-whatsapp my-float"></i>
+    </a>
+    <a href="#" class="scrollbutton" id="scrollbuttonid">
+        <i class="fa-solid fa-arrow-up fa-beat fa-lg"></i>
+    </a>
+
+    <!-- ################# Footer Starts Here#######################--->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-12">
+                    <h2>About Us</h2>
+                    <p>
+                        We specialize in providing accurate and timely diagnostice services to ensure you get the best
+                        care possible.
+                    </p>
+                    <p>Our team of experts is dedicated to delivering comprehensive and reliable results. Trust us for
+                        all you diagnostic needs... </p>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <h2>Useful Links</h2>
+                    <ul class="list-unstyled link-list">
+                        <li><a ui-sref="about" href="#/about">About us</a><i class="fa fa-angle-right"></i></li>
+                        <li><a ui-sref="portfolio" href="#/portfolio">Portfolio</a><i class="fa fa-angle-right"></i>
+                        </li>
+                        <li><a ui-sref="products" href="#/products">Latest jobs</a><i class="fa fa-angle-right"></i>
+                        </li>
+                        <li><a ui-sref="gallery" href="#/gallery">Gallery</a><i class="fa fa-angle-right"></i></li>
+                        <li><a ui-sref="contact" href="#/contact">Contact us</a><i class="fa fa-angle-right"></i></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-sm-12 map-img">
+                    <h2>Contact Us</h2>
+                    <address class="md-margin-bottom-40">
+                        k4 Health <br>
+                        Consult (Tamale TTH road) <br>
+                        Mr. Nana Boakye <br>
+                        Phone: +233 244485974 <br>
+                        Email: <a href="k4labs@gmail.com" class="">k4labs@gmail.com</a><br>
+                    </address>
+
+                </div>
+            </div>
+        </div>
+
+
+    </footer>
+    <div class="copy">
+        <div class="container">
+            <a href="https://www.smarteyeapps.com/">2024 &copy; All Rights Reserved | Designed and Developed by
+                WebMasterDesigns</a>
+
+            <span>
+                <a><i class="fab fa-github"></i></a>
+                <a><i class="fab fa-google-plus-g"></i></a>
+                <a><i class="fab fa-pinterest-p"></i></a>
+                <a><i class="fab fa-twitter"></i></a>
+                <a><i class="fab fa-facebook-f"></i></a>
+            </span>
+        </div>
+
+    </div>
+
+
+    <!-- footer ended -->
+    <script src="./script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.slim.min.js"></script>
+    <script type="text/javascript" src="./ScrollOnReveal.js"></script>
+    <script type="text/javascript">
+        $('.circle').ScrollOnReveal();
+        $('.cross').ScrollOnReveal({
+            beforeCss: {
+                'left': '-400px'
+            },
+            animatedCss: {
+                'left': '0px'
+            },
+            speed: 1000
+        })
+
+        $('.polygon').ScrollOnReveal({
+            beforeCss: {
+                'right': "-400px",
+                'opacity': '0'
+            },
+
+            animatedCss: {
+                right: "0px",
+                opacity: "1"
+            },
+            speed: 500
+        })
+    </script>
+
+    <script>
+        document.getElementById('rating').addEventListener('change', function () {
+            // Remove yellow-option class from all options
+            const options = this.options;
+            for (let i = 0; i < options.length; i++) {
+                options[i].classList.remove('yellow-option');
+            }
+            // Add yellow-option class to the selected option
+            options[this.selectedIndex].classList.add('yellow-option');
+        });
+
+        // Trigger change event to apply initial color
+        document.getElementById('rating').dispatchEvent(new Event('change'));
+    </script>
+
+    <script>
+        // Select all elements with the "i" tag and store them in a NodeList called "stars"
+        const stars = document.querySelectorAll(".stars i");
+
+        // Loop through the "stars" NodeList
+        stars.forEach((star, index1) => {
+            // Add an event listener that runs a function when the "click" event is triggered
+            star.addEventListener("click", () => {
+                // Loop through the "stars" NodeList Again
+                stars.forEach((star, index2) => {
+                    // Add the "active" class to the clicked star and any stars with a lower index
+                    // and remove the "active" class from any stars with a higher index
+                    index1 >= index2 ? star.classList.add("active") : star.classList.remove("active");
+                });
+            });
+        });
+    </script>
+    <script>
+        // Function to format text into lines of 'wordsPerLine' words
+        function formatText(text, wordsPerLine) {
+            const words = text.split(' ');
+            let formattedText = '';
+
+            for (let i = 0; i < words.length; i += wordsPerLine) {
+                formattedText += words.slice(i, i + wordsPerLine).join(' ') + ' \n';
+            }
+
+            return formattedText.trim();
+        }
+
+        // Get the element containing the comment content
+        const commentElement = document.getElementById('comment-content');
+
+        // Format the text and update the content
+        if (commentElement) {
+            const rawText = commentElement.textContent;
+            const formattedText = formatText(rawText, 5);
+            commentElement.textContent = formattedText;
+        }
+    </script>
+    <script src="./assets/js/jquery-3.2.1.min.js"></script>
+    <script src="./assets/js/popper.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./assets/plugins/scroll-nav/js/jquery.easing.min.js"></script>
+    <script src="./assets/plugins/scroll-nav/js/scrolling-nav.js"></script>
+    <script src="./assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js"></script>
+    <script>
+        let menubar = document.querySelector('#menu-bars');
+        let navbar = document.querySelector('.navbar');
+        menubar.onclick = () => {
+            menubar.classList.toggle('fa-times');
+            navbar.classList.toggle('active')
+        }
+    </script>
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
